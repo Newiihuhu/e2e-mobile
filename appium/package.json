@@ -17,6 +17,7 @@
     "wdio-vscode-service": "^6.0.0"
   },
   "scripts": {
-    "wdio": "wdio run ./config/wdio.conf.ts"
+    "e2e:android:all": "wdio run ./config/wdio.conf.ts",
+    "e2e:android:tag": "wdio run ./config/wdio.conf.ts --cucumberOpts.tags=\"$npm_config_tag\""
   }
 }
