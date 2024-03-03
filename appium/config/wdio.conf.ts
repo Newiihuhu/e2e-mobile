@@ -31,7 +31,7 @@ export const config: Options.Testrunner = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './features/**/*.feature'
+        '../features/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -59,14 +59,20 @@ export const config: Options.Testrunner = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        // capabilities for local Appium web tests on an Android Emulator
-        platformName: 'Android',
-        browserName: 'Chrome',
-        'appium:deviceName': 'Android GoogleAPI Emulator',
-        'appium:platformVersion': '12.0',
-        'appium:automationName': 'UiAutomator2'
-    },
+    capabilities: [
+        //     {
+        //     // capabilities for local Appium web tests on an Android Emulator
+        //     platformName: 'Android',
+        //     browserName: 'Chrome',
+        //     'appium:deviceName': 'Android GoogleAPI Emulator',
+        //     'appium:platformVersion': '12.0',
+        //     'appium:automationName': 'UiAutomator2'
+        // },
+        {
+            "platformName": "android",
+            "appium:automationName": "uiautomator2",
+            'appium:app': 'app-release.apk',
+        }
     ],
 
     //
@@ -116,7 +122,7 @@ export const config: Options.Testrunner = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['appium', 'browserstack', 'vscode'],
+    services: ['appium'],
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
