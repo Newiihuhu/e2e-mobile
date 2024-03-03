@@ -44,4 +44,3 @@ app.*.map.json
 /android/app/release
 appium/node_modules/
 appium/_results_/
-*.apk
